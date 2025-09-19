@@ -35,6 +35,9 @@ nav {
 }
 
 header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 139px;
 }
 
@@ -124,6 +127,14 @@ a {
 a:hover {
     color: #86bd24;
     transition: 0.3s;
+}
+
+.index_button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4vh;
+    border-radius: 4vh;
 }
 
 .content_formation {
@@ -226,6 +237,7 @@ form {
 
 .radio_ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: left;
     flex-direction: row;
     padding: 0;
@@ -319,11 +331,30 @@ footer {
     }
 }
 
+@media screen and (max-width: 500px) {
+    nav ul li a {
+        font-size: 10px;
+    }
+}
+
 @media screen and (max-width: 990px) {
 
     main {
         justify-content: flex-start;
         min-height: 75vh;
+    }
+
+    .main_pages {
+        gap: 2vh;
+    }
+
+    header {
+        justify-content: space-between;
+
+    }
+
+    nav {
+        justify-content: space-between;
     }
 
     h1 {
@@ -356,17 +387,46 @@ footer {
         justify-content: space-around;
     }
 
-    .label_burger {
-        width: 30px;
-        display: flex;
-        justify-content: right;
-        margin-left: auto;
-        font-size: 40px;
-        cursor: pointer;
+    nav ul {
+        display: none;
     }
 
-    #toggle:checked+.main_pages {
+    .label_burger::before {
+        content: "☰";
+    }
+
+    .label_burger {
         display: flex;
+        position: absolute;
+        justify-content: space-between;
+        top: 5vh;
+        right: 5vh;
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    #toggle:checked~.label_burger::before {
+        content: "X";
+    }
+
+    #toggle:checked~ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30vh;
+        z-index: 1;
+    }
+
+    #toggle:checked~ul li {
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+        background-color: white;
+        border-radius: 1vh;
+        padding: 10px;
+    }
+
+    #toggle:checked~ul li:hover {
+        outline: solid #ee4a7d;
     }
 }
 

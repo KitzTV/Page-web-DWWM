@@ -12,8 +12,10 @@
 
 <body>
     <header>
+        <a href="index.html"><img src="./assets/SiteDWWM/Images/logo.jpeg" class="logo" alt="Logo"></a>
         <nav>
-            <a href="index.html"><img src="./assets/SiteDWWM/Images/logo.jpeg" class="logo" alt="Logo"></a>
+            <input type="checkbox" id="toggle">
+            <label class="label_burger" for="toggle"></label>
             <ul class="main_pages">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="formation.html">Formation Développeur Web</a></li>
@@ -21,9 +23,6 @@
                 <li><a href="references.html">Nos Références</a></li>
                 <li><a href="contact.html">Nous contacter</a></li>
             </ul>
-
-            <label class="label_burger" for="toggle">☰</label>
-            <input type="checkbox" id="toggle">
         </nav>
     </header>
     <main class="main_index">
@@ -36,8 +35,9 @@
                 Une formation gratuite et rémunérée pour les demandeurs d'emploi
             </h2>
 
-            <button type="button" onclick="location.href='formation.html'">
-                Je découvre la formation
+            <button class="index_button" type="button" onclick="location.href='formation.html'">
+                <p>Je découvre la formation</p>
+                <label>▶</label>
             </button>
         </div>
     </main>
